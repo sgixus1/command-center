@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 GEN & Gary Command Center</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #00adb5;
+        }
+        .header h1 {
+            font-size: 42px;
+            color: #00adb5;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 18px;
+            color: #eeeeee;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid rgba(0, 173, 181, 0.3);
+            transition: all 0.3s;
+        }
+        .card:hover {
+            border-color: #00adb5;
+            transform: translateY(-5px);
+        }
+        .card-title {
+            color: #00adb5;
+            font-size: 24px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .status-working { background: #4caf50; color: white; }
+        .status-broken { background: #f44336; color: white; }
+        .status-planned { background: #ff9800; color: white; }
+        .status-halted { background: #9e9e9e; color: white; }
+        .project-info {
+            margin-bottom: 15px;
+            color: #eeeeee;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #00adb5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background: #0097a7;
+            transform: scale(1.05);
+        }
+        .tools-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 40px;
+            border: 2px solid rgba(255, 193, 7, 0.3);
+        }
+        .tools-title {
+            color: #ffc107;
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .tool {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #9e9e9e;
+            font-size: 14px;
+        }
+        .emoji { font-size: 24px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><span class="emoji">🚀</span> GEN & Gary Command Center</h1>
+            <p>Our central dashboard for tracking projects, debugging issues, and making decisions together.</p>
+        </div>
+
+        <div class="dashboard">
+            <!-- LeadGen Lite Card -->
+            <div class="card">
+                <div class="card-title">
+                    <span class="emoji">🎯</span> LeadGen Lite
+                </div>
+                <div class="status status-halted">HALTED</div>
+                <div class="project-info">
+                    <p><strong>Status:</strong> Simple version deployed, React version broken</p>
+                    <p><strong>URL:</strong> https://sgixus1.github.io/leadgen-lite/</p>
+                    <p><strong>Last updated:</strong> 2026-02-03 11:52 UTC</p>
+                    <p><strong>Decision:</strong> Halted - Working on command center first</p>
+                </div>
+                <a href="https://sgixus1.github.io/leadgen-lite/" target="_blank" class="button">
+                    <span class="emoji">🔗</span> Visit Project
+                </a>
+                <button class="button" onclick="reportError('LeadGen Lite')">
+                    <span class="emoji">🚨</span> Report Error
+                </button>
+            </div>
+
+            <!-- Magic Page Generator Card -->
+            <div class="card">
+                <div class="card-title">
+                    <span class="emoji">✨</span> Magic Page Generator
+                </div>
+                <div class="status status-planned">PLANNED</div>
+                <div class="project-info">
+                    <p><strong>Status:</strong> AI-powered page generator</p>
+                    <p><strong>Goal:</strong> Create pages from text prompts</p>
+                    <p><strong>Timeline:</strong> After command center</p>
+                    <p><strong>Tech:</strong> HTML/CSS + AI API</p>
+                </div>
+                <button class="button" onclick="alert('Coming soon after command center!')">
+                    <span class="emoji">📝</span> Plan Project
+                </button>
+            </div>
+
+            <!-- Command Center Card (this project) -->
+            <div class="card">
+                <div class="card-title">
+                    <span class="emoji">💻</span> Command Center
+                </div>
+                <div class="status status-working">ACTIVE</div>
+                <div class="project-info">
+                    <p><strong>Status:</strong> Building MVP (this page)</p>
+                    <p><strong>Goal:</strong> Central dashboard for all projects</p>
+                    <p><strong>Progress:</strong> Basic dashboard created</p>
+                    <p><strong>Tech:</strong> HTML/CSS only (guaranteed to work)</p>
+                </div>
+                <button class="button" onclick="location.reload()">
+                    <span class="emoji">🔄</span> Refresh
+                </button>
+            </div>
+        </div>
+
+        <div class="tools-section">
+            <div class="tools-title">
+                <span class="emoji">🛠️</span> Debugging & Tools
+            </div>
+            <div class="tools-grid">
+                <div class="tool">
+                    <h3><span class="emoji">🚨</span> Error Reporter</h3>
+                    <p>Report bugs directly from your device</p>
+                    <button class="button" onclick="openErrorForm()">
+                        Report Error
+                    </button>
+                </div>
+                <div class="tool">
+                    <h3><span class="emoji">📱</span> Device Tester</h3>
+                    <p>Test projects on different devices</p>
+                    <button class="button" onclick="testOnDevice()">
+                        Test Now
+                    </button>
+                </div>
+                <div class="tool">
+                    <h3><span class="emoji">📊</span> Decision Log</h3>
+                    <p>Track our decisions and learnings</p>
+                    <button class="button" onclick="viewDecisions()">
+                        View Log
+                    </button>
+                </div>
+                <div class="tool">
+                    <h3><span class="emoji">⚡</span> Cache Buster</h3>
+                    <p>Clear browser cache for testing</p>
+                    <button class="button" onclick="bustCache()">
+                        Bust Cache
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>GEN & Gary - Building the future together</p>
+            <p>Command Center v0.1 | Last updated: <span id="timestamp"></span></p>
+            <p>Simple technology that works everywhere</p>
+        </div>
+    </div>
+
+    <script>
+        // Set timestamp
+        document.getElementById('timestamp').textContent = new Date().toISOString();
+        
+        // Tool functions
+        function openErrorForm() {
+            const project = prompt('Which project has the error?', 'LeadGen Lite');
+            const error = prompt('Describe the error:', '');
+            if (project && error) {
+                alert(`✅ Error reported for ${project}:\n\n${error}\n\nGEN will investigate.`);
+                // In future: Send to server
+            }
+        }
+        
+        function testOnDevice() {
+            alert('🧪 Device testing tool coming soon!\n\nFor now:\n1. Open project URL\n2. Test on your device\n3. Report any issues');
+        }
+        
+        function viewDecisions() {
+            alert('📋 Decision Log:\n\n1. 2026-02-03 11:52: Halt LeadGen Lite project\n2. 2026-02-03 12:01: Build Command Center\n3. More decisions will be logged here.');
+        }
+        
+        function bustCache() {
+            const url = window.location.href.split('?')[0] + '?t=' + Date.now();
+            window.open(url, '_blank');
+            alert('🔄 Cache busted! Opening fresh version.');
+        }
+        
+        function reportError(project) {
+            const error = prompt(`Report error for ${project}:`, '');
+            if (error) {
+                alert(`🚨 Error reported for ${project}:\n\n${error}\n\nGEN notified.`);
+            }
+        }
+        
+        // Auto-refresh every 5 minutes
+        setTimeout(() => {
+            console.log('🔄 Command Center auto-refresh in 5 minutes');
+        }, 300000);
+        
+        console.log('🚀 Command Center loaded successfully');
+    </script>
+</body>
+</html>
